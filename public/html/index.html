@@ -15,8 +15,8 @@
 	<script defer src="/__/firebase/8.2.2/firebase-storage.js"></script>
 	<script defer src="/__/firebase/8.2.2/firebase-analytics.js"></script>
 	<script defer src="/__/firebase/init.js?useEmulator=true"></script>
-	<script src="../js/jquery-3.5.1.min.js"></script>
-	<script src="../js/index.js"></script>
+	<script defer src="../js/jquery-3.5.1.min.js"></script>
+	<script defer src="../js/index.js"></script>
 </head>
 <body>
 	<header class="header-wrapper">
@@ -31,7 +31,6 @@
 			<div class="email"></div>
 			<button class="btn btn-danger" id="btLogout">
 				<i class="fa fa-sign-out-alt"></i>
-				로그아웃
 			</button>
 		</div>
 	</header>
@@ -47,16 +46,19 @@
 
 	<div class="content-wrapper">
 		<div class="list-wrapper">
-			<div class="add-wrap">
-				<i class="fa fa-plus"></i>
-				<input type="text" id="task" class="form-control" autofocus>
+			<form class="add-wrap" onsubmit="return onSubmit(this)">
+				<button type="submit"><i class="fa fa-plus"></i></button>
+				<input type="text" name="task" class="form-control" autofocus>
+			</form>
+			<div class="text-right">
+				<a href="javascript: onDoneClick()" class="bt-done active">완료된 항목 </a>
 			</div>
 			<ul class="list-wrap">
-				<li>
+				<!-- <li>
 					<i class="active far fa-circle"></i>
 					<i class="far fa-check-circle"></i>
 					<span>우유/고기 사기</span>
-				</li>
+				</li> -->
 			</ul>
 		</div>
 		<div class="edit-wrapper">

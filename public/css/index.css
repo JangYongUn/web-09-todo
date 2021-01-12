@@ -14,7 +14,9 @@
 .content-wrapper > div {flex: 50% 0 0; padding: 1em; height: 100%;}
 .content-wrapper .list-wrapper {background-image: linear-gradient(to right, rgb(36, 201, 151), rgb(83, 212, 51));}
 .content-wrapper .list-wrapper .add-wrap {padding: 0.5em 0; background-color: rgba(255, 255, 255, 0.4); margin: 0.25em; border-radius: 4px; display: flex; align-items: center;}
-.content-wrapper .list-wrapper .add-wrap > .fa-plus {margin-left: 0.5em; color: #f9f9f9; font-size: 1.75em;}
+.content-wrapper .list-wrapper .add-wrap > button {background-color: transparent; border: none;}
+.content-wrapper .list-wrapper .add-wrap > button:focus {outline: none;}
+.content-wrapper .list-wrapper .add-wrap .fa-plus {margin-left: 0.5em; color: #f9f9f9; font-size: 1.75em;}
 .content-wrapper .list-wrapper .add-wrap > .form-control {background-color: transparent; border: none; outline: none; flex-grow: 1; font-size: 1.25em;}
 .content-wrapper .list-wrapper .add-wrap > .form-control:focus {box-shadow: none;}
 .content-wrapper .list-wrapper .add-wrap {margin-top: 1em;}
