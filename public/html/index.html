@@ -46,9 +46,9 @@
 
 	<div class="content-wrapper">
 		<div class="list-wrapper">
-			<form class="add-wrap" onsubmit="return onSubmit(this)">
+			<form class="add-wrap" onsubmit="return onSubmit(this);">
 				<button type="submit"><i class="fa fa-plus"></i></button>
-				<input type="text" name="task" class="form-control" onkeyup="onKeyup(this)" autofocus>
+				<input type="text" name="task" class="form-control" onkeyup="onKeyup(this);" autofocus>
 			</form>
 			<div class="text-right">
 				<a href="javascript: onDoneClick()" class="bt-done active">완료된 항목 </a>
@@ -60,23 +60,38 @@
 					<span>우유/고기 사기</span>
 				</li> -->
 			</ul>
+			<div class="bt-close active"></div>
 		</div>
 		<div class="edit-wrapper">
-			<form onsubmit="return onEdit(this)">
-				<input type="text" name="task" class="form-control" placeholder="할 일을 입력하세요.">
-				<textarea id="comment" class="form-control" placeholder="내용을 입력하세요."></textarea>
+			<form onsubmit="return onEdit(this);">
+				<input type="hidden" name="key" value="">
+				<input type="text" name="task" class="form-control" placeholder="할일을 입력하세요">
+				<textarea name="comment" class="form-control" placeholder="내용을 입력하세요"></textarea>
+				<div class="file-wrap">
+					<img src="//via.placeholder.com/60" alt="첨부이미지" class="image" onclick="onViewImg(this);">
+					<a href="#" class="pds">파일명.jpg</a>
+					<i class="fa fa-times bt-delete" onclick="onFileDelete(this);"></i>
+				</div>
 				<input type="file" name="upfile" class="form-control-file">
 				<hr>
-				<button class="btn btn-primary">저장</button>
+				<button class="btn btn-success mx-auto d-none">수정</button>
+				<button class="btn btn-primary mx-auto">새로운 할일 저장</button>
+				<button type="reset" class="btn btn-warning mx-auto" 
+				onclick="onReset(this.form)">취소</button>
 			</form>
 		</div>
 	</div>
 
 	<div class="auth-wrapper modal-wrapper">
 		<button class="btn btn-danger" id="btGoogleLogin">
-			<i class="fab fa-google mr-2"></i>
-			Google 로그인
+			<i class="fab fa-google mr-2"></i> Google 로그인
 		</button>
+	</div>
+
+	<div class="img-wrapper modal-wrapper">
+		<div class="mw-75">
+			<img src="" alt="이미지" class="mw-100">
+		</div>
 	</div>
 
 
